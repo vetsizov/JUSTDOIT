@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Зарегистрироватьсяt{% endblock %}
+
+{% block main_content %}
+  <h2>создать аккаунт</h2>
+  <p>воспользуйтесь следующей формой:</p>
+  <form action="." method="post">
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="создать"></p>
+  </form>
+{% endblock %}

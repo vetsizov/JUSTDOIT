@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Создать задачу{% endblock %}
+
+{% block main_content %}
+	<h2>cоздать задачу</h2>
+	<form action="." method="post">
+    	{{ form.as_p }}
+    	{% csrf_token %}
+    	<p><button class="add" type="submit">добавить</button></p>
+	</form>
+	<p></p>
+	<a href={% url "tasks:list" %}>отмена</a>
+{% endblock %}
