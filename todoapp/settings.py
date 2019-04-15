@@ -148,13 +148,12 @@ MEDIA_URL = "/media/" # путь в вебе для медиаданных (чт
 MEDIA_ROOT = os.path.join(BASE_DIR, "media") # где сами эти файлы искать в системе
 
 #настройка почты для отправки писем
-#EMAIL_HOST = os.environ.get("EMAIL_HOST")                       #хост для SMTP-сервера. Если не задан, то считается что это localhost
-#EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")             #логин для SMTP-сервера
-#EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")     #пароль для SMTP-сервера
-#EMAIL_PORT = int(os.environ.get("EMAIL_PORT"))                  #порт для SMTP-сервера; по умолчанию 25
-#EMAIL_USE_TLS = bool(os.environ.get("EMAIL_USE_TLS"))           #EMAIL_USE_TLS и EMAIL_USE_SSL: булевые флаги для настроек безопасности
+EMAIL_HOST = os.environ.get("EMAIL_HOST")                       #хост для SMTP-сервера. Если не задан, то считается что это localhost
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")             #логин для SMTP-сервера
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")     #пароль для SMTP-сервера
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT"))                  #порт для SMTP-сервера; по умолчанию 25
+EMAIL_USE_TLS = bool(os.environ.get("EMAIL_USE_TLS"))           #EMAIL_USE_TLS и EMAIL_USE_SSL: булевые флаги для настроек безопасности
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #вывод писем в консоль вместо SMTP-серверая настроек безопасности
-
 
 django_heroku.settings(locals())
